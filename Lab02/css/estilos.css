@@ -1,0 +1,39 @@
+/* styles.css - Reseteo y Box Model */
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: #8bcbdf;
+padding: 20px;
+}
+.form-group {
+margin-bottom: 30px;
+width: 100%;
+max-width: 400px;
+}
+.form-label {
+display: block;
+
+margin-bottom: 10px;
+font-weight: bold;
+color: #333;
+}
+.form-input {
+width: 100%;
+padding: 10px 12px;
+border: 1px solid #8bcbdf;
+border-radius: 6px;
+font-size: 14px;
+transition: border-color 0.3s;
+}
+.form-input:focus {
+border-color: #3182ce;
+outline: none;
+box-shadow: 0 0 5px rgba(49, 130, 206, 0.5);
+}
+.form-input:invalid:touched {
+border-color: #e53e3e;
+}

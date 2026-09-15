@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Formularios HTML</title>
+        <link rel="stylesheet" href="estilos.css"> 
+    </head>
+    
+    <body> 
+        <form action="/procesar" method="post" class="form-container">
+        <fieldset>
+        <legend>Información Personal</legend>
+            
+            
+            <div class="form-group">
+                <label for="codigo">Codigo de Estudiante</label>
+                <input type="text" id="nombre" name="codigo" pattern="[0-9]{8}" required>
+            </div>
+
+            <div>
+                <label for="cars">Elija una Carrera Profesional:</label>
+                    <select id="cars" name="cars">
+                        <option value="volvo">Ingeniería Industrial</option>
+                        <option value="saab">Ingeniería de Sistemas</option>
+                        <option value="fiat">Ingeniería Civil</option>
+                        <option value="audi">Ingeniería Electrónica</option>
+                    </select>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+        <legend>Información de la cuenta</legend>
+            <div class="form-group">
+                <label for="email" class="form-label">Correo Institucional:</label>
+                <input type="email" id="email" name="email" class="form-input"
+                required placeholder="usuario@universidad.edu.pe">
+            </div>
+
+
+        
+        </fieldset>
+        </form>
+    </body>
+</html>
