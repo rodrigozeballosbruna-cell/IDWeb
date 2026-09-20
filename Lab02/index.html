@@ -1,75 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
-        <title> Formularios HTML</title>
+        <meta charset="UTF-8">
+        <title>Formularios HTML</title>
         <link rel="stylesheet" href="css/estilos.css"> 
     </head>
     
     <body> 
-        <form action="/procesar" method="post" class="form-container">
-        <fieldset>
-        <legend>Información Personal</legend>
-            
-            <div class="form-group">
-                <label for="codigo">Codigo de Estudiante</label>
-                <input type="text" id="codigo" class="form-input" name="codigo" pattern="[0-9]{8}" required>
-            </div>
-            <div class="form-group">
-                <label for="nombre">Nombre completo</label>
-                <input type="text" id="nombre" class="form-input" name="nombre" required>
-            </div>
-            <div class="form-group">
-                <label for="fecha nacimiento">Fecha de nacimiento</label>
-                <input type="date" id="fecha_nacimiento" class="form-input" name="fecha_nacimiento" 
-                min="1900-01-01"
-                max="2024-12-31"
-                required>
-            </div>            
-                <label for="cars">Elija una Carrera Profesional:</label>
-                    <select id="cars" name="cars">
+        <form action="/procesar" method="post" class="card">
+            <fieldset>
+                <legend>Información Personal</legend>
+                
+                <div class="form-group">
+                    <label for="codigo" class="form-label">Código de Estudiante</label>
+                    <input type="text" id="codigo" class="form-input" name="codigo" pattern="[0-9]{8}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nombre" class="form-label">Nombre completo</label>
+                    <input type="text" id="nombre" class="form-input" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
+                    <input type="date" id="fecha_nacimiento" class="form-input" name="fecha_nacimiento" 
+                           min="1900-01-01" max="2024-12-31" required>
+                </div>            
+
+                <div class="form-group">
+                    <label for="cars" class="form-label">Elija una Carrera Profesional:</label>
+                    <select id="cars" name="cars" class="form-input">
                         <option value="Industrial">Ingeniería Industrial</option>
                         <option value="Sistemas">Ingeniería de Sistemas</option>
                         <option value="Civil">Ingeniería Civil</option>
                         <option value="Minas">Ingeniería de Minas</option>
                         <option value="Eléctrica">Ingeniería Eléctrica</option>
                         <option value="Química">Ingeniería Química</option>
-                        <input class="form-input" type="text" id="carrera" name="carrera" readonly>
                     </select>
-            <div class="form-group">
-                <label for="turno_m"><input type="radio" id="turno_m" name="turno" value="Mañana">Mañana</label>
-                <label for="turno_t"><input type="radio" id="turno_t" name="turno" value="Tarde">Tarde</label>
-                <label for="turno_n"><input type="radio" id="turno_n" name="turno" value="Noche">Noche</label>
-                <input class="form-input" type="text" id="turno" name="turno" readonly>
-            </div>
-        </fieldset>
+                </div>
 
+                <div class="form-group">
+                    <label class="form-label">Turno:</label>
+                    <label for="turno_m"><input type="radio" id="turno_m" name="turno" value="Mañana"> Mañana</label>
+                    <label for="turno_t"><input type="radio" id="turno_t" name="turno" value="Tarde"> Tarde</label>
+                    <label for="turno_n"><input type="radio" id="turno_n" name="turno" value="Noche"> Noche</label>
+                </div>
+            </fieldset>
 
-        <fieldset>
-        <legend>Información de la cuenta</legend>
-            <div class="form-group">
-                <label for="email" class="form-label">Correo Institucional:</label>
-                <input type="email" id="email" name="email" class="form-input"
-                required placeholder="usuario@universidad.edu.pe">
-            </div>
-            <div class="form-group">
-                <label for="password">Contraseña(mínimo 8 caracteres,1 Mayúscula y 1 número):</label>
-                <input type="password" id="password" class="form-input" name="password" pattern="(?=.*[A-Z])(?=.*\d).{8,}">
-            </div>
-            <div class="form-group">
-                <label for="comentarios">Comentarios:</label>
-                <textarea id="comentarios" name="comentarios" class="form-input" rows="3"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="terminos">
-                <input type="checkbox" id="terminos" name="terminos" class="form-input" required>
-                Acepto Términos y Condiciones
-                </label>
-            </div>
-        </fieldset>
+            <fieldset>
+                <legend>Información de la cuenta</legend>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Correo Institucional:</label>
+                    <input type="email" id="email" name="email" class="form-input"
+                           required placeholder="usuario@universidad.edu.pe">
+                </div>
 
-        <button type="submit" class="btn">Registrar Estudiante</button>
+                <div class="form-group">
+                    <label for="password" class="form-label">Contraseña (mínimo 8 caracteres, 1 Mayúscula y 1 número):</label>
+                    <input type="password" id="password" class="form-input" name="password" pattern="(?=.*[A-Z])(?=.*\d).{8,}">
+                </div>
 
-        <input type="input" class="form-input">
+                <div class="form-group">
+                    <label for="comentarios" class="form-label">Comentarios:</label>
+                    <textarea id="comentarios" name="comentarios" class="form-input" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="terminos">
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        Acepto Términos y Condiciones
+                    </label>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn">Registrar Estudiante</button>
         </form>
     </body>
 </html>
