@@ -3,27 +3,136 @@
     <link rel="stylesheet" href="css/estilos.css"> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Pagina con Bootstrap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
-        
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-        <a class="navbar-brand" href="#">Portal Académico</a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+   <header>    
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Portal Académico</a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-
-    bs-target="#navbarNav">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
 
-    <span class="navbar-toggler-icon"></span>
-    <span></button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Cursos</a></li>
-    </ul>
-    </div>
-    </div>
-    </nav>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Cursos</a></li>
+            </ul>
 
+            <div class="d-flex gap-2">
+                <a href="#" class="btn btn-outline-light">Iniciar Sesión</a>
+                <a href="#" class="btn btn-primary">Registrarse</a>
+            </div>
+        </div>
+
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Aprende el Futuro Hoy</h1>
+                <p>Impulsa tu carrera profesional con los mejores cursos y en el menor tiempo posible </p>
+                <a href="#catalogo" class="btn btn-primary btn-lg">Explorar Cursos</a>
+            </div>
+            <div class="hero-image">
+                <img src="chico-guapo-estudia-biblioteca_1157-22209.avif" alt="Imagen representativa">
+            </div>
+        </section>
+
+        <section id="catalogo" class="container py-5">
+            <h2 class="text-center mb-4">Catálogo de Cursos Oferta</h2>
+            <div class="courses-grid">
+                <!-- Tarjeta 1 -->
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Desarrollo Web Fullstack</h5>
+                        <p class="card-text">Aprende HTML, CSS, JS, Node.js y bases de datos desde cero.</p>
+                    </div>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Diseño UX/UI</h5>
+                        <p class="card-text">Diseña interfaces de usuario intuitivas y atractivas con Figma.</p>
+                    </div>
+                </div>
+                <!-- Tarjeta 3 -->
+                <div class="card h-100">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Data Science y Python</h5>
+                        <p class="card-text">Analiza grandes volúmenes de datos y crea modelos predictivos.</p>
+                    </div>
+                </div>
+                <!-- Tarjeta 4 -->
+                <div class="card h-100">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Marketing Digital</h5>
+                        <p class="card-text">Estrategias de SEO, SEM y gestión de campañas publicitarias.</p>
+                    </div>
+                </div>
+                <!-- Tarjeta 5 -->
+                <div class="card h-100">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Ciberseguridad Básica</h5>
+                        <p class="card-text">Aprende a proteger redes, sistemas y datos de amenazas digitales.</p>
+                    </div>
+                </div>
+                <!-- Tarjeta 6 -->
+                <div class="card h-100">
+                
+                    <div class="card-body">
+                        <h5 class="card-title">Desarrollo Móvil Flutter</h5>
+                        <p class="card-text">Crea aplicaciones nativas para Android e iOS con un único código.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="card mb-4">
+            <div class="card-body py-4"> <!-- Utilidad de espaciado vertical py-4 -->
+                <h5 class="card-title mb-3">Congreso Internacional 2026</h5> <!-- Espaciado inferior mb-3 -->
+                <p class="card-text mb-4">
+                    Participa en nuestro congreso y obten un certificado gratuito.
+                </p>
+
+                <!-- AQUÍ APARECE EL BOTÓN -->
+                <button 
+                type="button" 
+                class="btn btn-primary" 
+                data-bs-toggle="modal" 
+                data-bs-target="#noticiaModal">
+                Más información
+                </button>
+            </div>
+        </div>
+        <!-- Cuadro Modal de Bootstrap -->
+        <div class="modal fade" id="noticiaModal" tabindex="-1" aria-labelledby="noticiaModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="noticiaModalLabel">Detalles del Hackathon 2026</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>El evento se llevará a cabo del 15 al 16 de Octubre. Incluye talleres con expertos de la industria. Ponencias en vivo y certificación doble</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar                         
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+     
 </body>

@@ -1,4 +1,34 @@
 /* CSS Nativo Grid Mobile First */
+.hero-section {
+  display: flex;
+  flex-direction: column-reverse; /* Móviles: Imagen abajo del texto */
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-content {
+  flex: 1;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+@media (min-width: 768px) {
+  .hero-section {
+    flex-direction: row;
+    padding: 4rem 2rem;
+  }
+}
 .card-grid {
 display: grid;
 grid-template-columns: 1fr; /* Mobile */
@@ -11,6 +41,7 @@ grid-template-columns: repeat(2, 1fr); /* Tablet */
 }
 @media (min-width: 992px) {
 .card-grid {
-grid-template-columns: repeat(3, 1fr); /* Desktop */
+grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); /* Desktop */
+gap: 1.5rem;
 }
 }
