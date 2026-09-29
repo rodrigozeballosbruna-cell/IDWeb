@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestor de Tareas Universitarias</title>
+  <style>
+    .completada .texto { text-decoration: line-through; color: gray; }
+    .alerta-error { color: red; font-weight: bold; }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <h1>Gestor de Tareas Universitarias</h1>
+
+  <!-- Contenedor para mostrar mensajes de error -->
+  <div id="div-alertas"></div>
+
+  <!-- Formulario de ingreso -->
+  <form id="formulario-tarea">
+    <input type="text" id="titulo" placeholder="Título de la tarea">
+    <input type="text" id="curso" placeholder="Nombre del curso">
+    <input type="date" id="fecha">
+    <button type="submit">Agregar Tarea</button>
+  </form>
+
+  <hr>
+
+  <!-- Filtros -->
+  <div>
+    <button onclick="filtrar('todas')">Todas</button>
+    <button onclick="filtrar('pendientes')">Pendientes</button>
+    <button onclick="filtrar('completadas')">Completadas</button>
+  </div>
+
+  <!-- Lista donde se renderizan las tareas -->
+  <ul id="lista-tareas"></ul>
+
+  <!-- Vinculamos el archivo JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
