@@ -47,3 +47,65 @@ formulario.addEventListener('submit', (e) => {
   formulario.reset();
 });
 
+//FUNCIONES DE MANIPULACIÓN DEL ARREGLO
+function cambiarEstado(id) {
+  const tarea = tareas.find(t => t.id === id);
+  if (tarea) {
+    tarea.completada = !tarea.completada;
+    guardarYRenderizar();
+  }
+}
+
+function eliminarTarea(id) {
+  tareas = tareas.filter(t => t.id !== id);
+  guardarYRenderizar();
+}
+
+function filtrar(tipo) {
+  filtroActual = tipo;
+  renderizarTareas();
+}
+
+//RENDERIZADO EN EL DOM
+function renderizarTareas() {
+  listaTareasDOM.innerHTML = '';
+
+  // Uso de filter
+  let tareasFiltradas = tareas;
+  if (filtroActual === 'pendientes') {
+    tareasFiltradas = tareas.filter(t => !t.completada);
+  } else if (filtroActual === 'completadas') {
+    tareasFiltradas = tareas.filter(t => t.completada);
+  }
+
+  if (tareasFiltradas.length === 0) {
+    listaTareasDOM.innerHTML = '<li>No hay tareas para mostrar.</li>';
+    return;
+  }
+
+  // Construcción dinámica de la lista
+  tareasFiltradas.forEach(tarea => {
+    const li = document.createElement('li');
+    li.className = tarea.completada ? 'completada' : '';
+
+    li.innerHTML = `
+      <span class="texto">
+        <strong>${tarea.titulo}</strong> - ${tarea.curso} (Entrega: ${tarea.fechaEntrega})
+      </span>
+      <button onclick="cambiarEstado(${tarea.id})">
+        ${tarea.completada ? 'Desmarcar' : 'Completar'}
+      </button>
+      <button onclick="eliminarTarea(${tarea.id})">Eliminar</button>
+    `;
+
+    listaTareasDOM.appendChild(li);
+  });
+}
+
+//PERSISTENCIA-LOCALSTORAGE
+function guardarYRenderizar() {
+  localStorage.setItem('tareas', JSON.stringify(tareas));
+  renderizarTareas();
+}
+
+renderizarTareas();
