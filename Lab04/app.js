@@ -47,7 +47,7 @@ formulario.addEventListener('submit', (e) => {
   formulario.reset();
 });
 
-// 4. FUNCIONES DE MANIPULACIÓN DEL ARREGLO
+//FUNCIONES DE MANIPULACIÓN DEL ARREGLO
 function cambiarEstado(id) {
   // Uso de find para buscar la tarea
   const tarea = tareas.find(t => t.id === id);
@@ -58,7 +58,6 @@ function cambiarEstado(id) {
 }
 
 function eliminarTarea(id) {
-  // Uso de filter para remover la tarea
   tareas = tareas.filter(t => t.id !== id);
   guardarYRenderizar();
 }
@@ -68,11 +67,11 @@ function filtrar(tipo) {
   renderizarTareas();
 }
 
-// 5. RENDERIZADO EN EL DOM
+//RENDERIZADO EN EL DOM
 function renderizarTareas() {
   listaTareasDOM.innerHTML = '';
 
-  // Uso de filter para filtrar según el botón seleccionado
+  // Uso de filter
   let tareasFiltradas = tareas;
   if (filtroActual === 'pendientes') {
     tareasFiltradas = tareas.filter(t => !t.completada);
@@ -110,5 +109,4 @@ function guardarYRenderizar() {
   renderizarTareas();
 }
 
-// Inicializar la app al cargar la página
 renderizarTareas();
