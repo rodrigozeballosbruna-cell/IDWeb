@@ -4,12 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Gestor de Tareas Universitarias</title>
-  <style>
-    .completada .texto { text-decoration: line-through; color: gray; }
-    .alerta-error { color: red; font-weight: bold; }
-    ul { list-style: none; padding: 0; }
-    li { margin-bottom: 8px; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -35,10 +30,11 @@
     <button onclick="filtrar('completadas')">Completadas</button>
   </div>
 
-  <!-- Lista donde se renderizan las tareas -->
   <ul id="lista-tareas"></ul>
 
-  <!-- Vinculamos el archivo JavaScript -->
   <script src="app.js"></script>
 </body>
+<footer>
+  <p>© 2026 Gestor de Tareas Universitarias. Todos los derechos reservados.</p>
+</footer>
 </html>
