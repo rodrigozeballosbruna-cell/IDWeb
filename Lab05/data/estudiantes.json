@@ -1,4 +1,17 @@
 [
-  { "id": 1, "nombre": "Carlos Hernández", "carrera": "Ingeniería de Sistemas" },
-  { "id": 2, "nombre": "Juan García", "carrera": "Ingeniería de Sistemas" }
+  {
+    "id": 1,
+    "nombre": "Carlos Hernández",
+    "carrera": "Ingeniería de Sistemas"
+  },
+  {
+    "id": 2,
+    "nombre": "Juan García",
+    "carrera": "Ingeniería de Sistemas"
+  },
+  {
+    "nombre": "Carlos Mendoza",
+    "carrera": "Ingeniería de Sistemas",
+    "id": 3
+  }
 ]
